@@ -1,7 +1,7 @@
 // Tony Ozuna Ceseña    372270
-// 28/10/23          1/11/23
-// Menu para rellenar registros de forma automatica y poder convertirlos a archivo
-// TOC_A11_01_432
+// 8/11/23          9/11/23
+// Menu para cargar archivo y crear archivo
+// TOC_A12_01_432
 
 #include "tilin.h"
 #include <conio.h>
@@ -478,24 +478,24 @@ int lee_archivo(Personas persona[], int i)
             {
 
                 dato = strtok(lalinea, " ");
-                printf("\n primer dato: [%s]", dato);
+                // printf("\n primer dato: [%s]", dato);
                 dato = strtok(NULL, " ");
-                printf(" segundo dato: [%s]", dato);
+                // printf(" segundo dato: [%s]", dato);
                 matricula = atoi(dato);
                 dato = strtok(NULL, " ");
-                printf(" 3er dato: [%s]", dato);
+                // printf(" 3er dato: [%s]", dato);
                 strcpy(elnombre, dato);
                 dato = strtok(NULL, " ");
-                printf(" 4to dato: [%s]", dato);
+                // printf(" 4to dato: [%s]", dato);
                 strcpy(apa, dato);
                 dato = strtok(NULL, " ");
-                printf(" 5to dato: [%s]", dato);
+                // printf(" 5to dato: [%s]", dato);
                 strcpy(ama, dato);
                 dato = strtok(NULL, " ");
-                printf(" 6to dato: [%s]", dato);
+                // printf(" 6to dato: [%s]", dato);
                 edad = atoi(dato);
                 dato = strtok(NULL, " ");
-                printf(" 7mo dato: [%s]", dato);
+                // printf(" 7mo dato: [%s]", dato);
                 strcpy(sexor, dato);
                 // fscanf(fa, "%d %d %s %s %s %d %s", &lalinea);
                 // fscanf(fa, "%d %d %*s %*s %*s %d %*s", &x, &matricula, elnombre, apa, ama, &edad, sexor);
@@ -514,7 +514,7 @@ int lee_archivo(Personas persona[], int i)
         printf("No existe el archivo %s", nombre);
     }
     fclose(fa);
-
+    printf("Se cargo exitosamente el archivo\n");
     return i;
 }
 
@@ -525,6 +525,7 @@ int main()
     int total = 0, max = 1500, incremento = 10;
     int i = 0, primera = 0;
     int ordenado = 0; // Variable para saber si ya esta ordenado el registro
+    int abrir = 1;
     struct Personas persona[1500];
     srand(time(NULL));
     do
@@ -544,10 +545,21 @@ int main()
         {
         case 1:
             // lee_archivo(persona, i);
-            total = lee_archivo(persona, i);
-            printf("\nPresione ENTER para continuar . . . \n");
-            getch();
-            break;
+            if (abrir == 1)
+            {
+                total = lee_archivo(persona, i);
+                abrir = 0;
+                printf("\nPresione ENTER para continuar . . . \n");
+                getch();
+                break;
+            }
+            else
+            {
+                printf("\nSolo puedes cargar el archivo una sola vez\n");
+                printf("\nPresione ENTER para continuar . . . \n");
+                getch();
+                break;
+            }
         case 2:
             if (total == 1500)
             {

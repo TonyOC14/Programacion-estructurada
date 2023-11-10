@@ -1,0 +1,11 @@
+  No   Matricula     Nombre        Apellido P.        Apellido M.     Edad    Sexo   
+  1    332749        KARINA        GONZALEZ           VERLANDER        50     Mujer 
+  2    314636        ACHRAF        BALDE              KAMADO           23     Hombre 
+  3    308238        KIM           VALVERDE           KANE             16     Mujer 
+  4    300869        LUIS          MOUNT              NAZARIO          41     Hombre 
+  5    306550        VEGETA        MOUNT              LOPEZ            30     Hombre 
+  6    308538        MANUELLA      MBAPPE             SUAREZ           50     Mujer 
+  7    311033        NOBARA        GOMEZ              MARTINEZ         11     Mujer 
+  8    327607        ACHRAF        ELIZALDE           SOTELO           52     Hombre 
+  9    301492        SAITAMA       CANO               MODRIC           23     Hombre 
+ 10    313430        SHIGERU       BALDE              ALCANTARA        31     Hombre 
